@@ -27,16 +27,12 @@ public final class ProfesorEntity {
 
     public ProfesorEntity() {
         setDefaultId();
-        setDefaultTipoIdentificacion();
-        setDefaultNumeroIdentificacion();
-        setDefaultNombresCompletos();
+        initializeDefault();
     }
 
     public ProfesorEntity(final UUID id) {
         setId(id);
-        setDefaultTipoIdentificacion();
-        setDefaultNumeroIdentificacion();
-        setDefaultNombresCompletos();
+        initializeDefault();
     }
 
     public ProfesorEntity(final UUID id, final TipoIdentificacionEntity tipoIdentificacion, final String numeroIdentificacion,
@@ -45,6 +41,12 @@ public final class ProfesorEntity {
         setTipoIdentificacion(tipoIdentificacion);
         setNumeroIdentificacion(numeroIdentificacion);
         setNombresCompletos(nombresCompletos);
+    }
+
+    public void initializeDefault(){
+        setDefaultTipoIdentificacion();
+        setDefaultNumeroIdentificacion();
+        setDefaultNombresCompletos();
     }
 
     public UUID getId() {

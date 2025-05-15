@@ -27,25 +27,27 @@ public final class EstudianteEntity {
 
     public EstudianteEntity() {
         setDefaultId();
-        setDefaultTipoIdentificacion();
-        setDefaultNumeroIdentificacion();
-        setDefaultNombresCompletos();
+        initializeDefault();
     }
 
     public EstudianteEntity(final UUID id) {
         setId(id);
-        setDefaultTipoIdentificacion();
-        setDefaultNumeroIdentificacion();
-        setDefaultNombresCompletos();
+        initializeDefault();
     }
 
-    public EstudianteEntity(final UUID id, final TipoIdentificacionEntity tipoIdentificacion, final String numeroIdentificacion,
-                            final String nombresCompletos) {
+    public EstudianteEntity(final UUID id, final TipoIdentificacionEntity tipoIdentificacion, final String numeroIdentificacion, final String nombresCompletos) {
         setId(id);
         setTipoIdentificacion(tipoIdentificacion);
         setNumeroIdentificacion(numeroIdentificacion);
         setNombresCompletos(nombresCompletos);
     }
+
+    public void initializeDefault(){
+        setDefaultTipoIdentificacion();
+        setDefaultNumeroIdentificacion();
+        setDefaultNombresCompletos();
+    }
+
 
     public UUID getId() {
         return id;

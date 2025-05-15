@@ -24,20 +24,23 @@ public final class EstudianteGrupoEntity {
 
     public EstudianteGrupoEntity() {
         setDefaultId();
-        setDefaultGrupo();
-        setDefaultEstudiante();
+        initializeDefault();
     }
 
     public EstudianteGrupoEntity(final UUID id) {
         setId(id);
-        setDefaultGrupo();
-        setDefaultEstudiante();
+        initializeDefault();
     }
 
     public EstudianteGrupoEntity(final UUID id, final GrupoEntity grupo, final EstudianteEntity estudiante) {
         setId(id);
         setGrupo(grupo);
         setEstudiante(estudiante);
+    }
+
+    public void initializeDefault(){
+        setDefaultGrupo();
+        setDefaultEstudiante();
     }
 
     public UUID getId() {

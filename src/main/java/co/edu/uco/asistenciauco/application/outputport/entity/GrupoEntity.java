@@ -27,16 +27,12 @@ public final class GrupoEntity {
 
     public GrupoEntity() {
         setDefaultId();
-        setDefaultProfesor();
-        setDefaultMateria();
-        setDefaultCantidadEstudiantes();
+        initializeDefault();
     }
 
     public GrupoEntity(final UUID id) {
         setId(id);
-        setDefaultProfesor();
-        setDefaultMateria();
-        setDefaultCantidadEstudiantes();
+        initializeDefault();
     }
 
     public GrupoEntity(final UUID id, final ProfesorEntity profesor, final MateriaEntity materia, final int cantidadEstudiantes) {
@@ -44,6 +40,12 @@ public final class GrupoEntity {
         setProfesor(profesor);
         setMateria(materia);
         setCantidadEstudiantes(cantidadEstudiantes);
+    }
+
+    public void initializeDefault(){
+        setDefaultProfesor();
+        setDefaultMateria();
+        setDefaultCantidadEstudiantes();
     }
 
     public UUID getId() {

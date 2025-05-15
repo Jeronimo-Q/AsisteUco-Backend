@@ -22,20 +22,23 @@ public final class MateriaEntity {
 
     public MateriaEntity() {
         setDefaultId();
-        setDefaultClave();
-        setDefaultNombre();
+        initializeDefault();
     }
 
     public MateriaEntity(final UUID id) {
         setId(id);
-        setDefaultClave();
-        setDefaultNombre();
+        initializeDefault();
     }
 
     public MateriaEntity(final UUID id, final String clave, final String nombre) {
         setId(id);
         setClave(clave);
         setNombre(nombre);
+    }
+
+    public void initializeDefault(){
+        setDefaultClave();
+        setDefaultNombre();
     }
 
     public UUID getId() {

@@ -23,20 +23,23 @@ public final class TipoIdentificacionEntity {
 
     public TipoIdentificacionEntity() {
         setDefaultId();
-        setDefaultClave();
-        setDefaultNombre();
+        initializeDefault();
     }
 
     public TipoIdentificacionEntity(final UUID id) {
         setId(id);
-        setDefaultClave();
-        setDefaultNombre();
+        initializeDefault();
     }
 
     public TipoIdentificacionEntity(final UUID id, final String clave, final String nombre) {
         setId(id);
         setClave(clave);
         setNombre(nombre);
+    }
+
+    public void initializeDefault(){
+        setDefaultClave();
+        setDefaultNombre();
     }
 
     public UUID getId() {

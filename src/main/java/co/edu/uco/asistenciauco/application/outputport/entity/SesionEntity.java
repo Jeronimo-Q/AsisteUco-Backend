@@ -24,20 +24,23 @@ public final class SesionEntity {
 
     public SesionEntity() {
         setDefaultId();
-        setDefaultGrupo();
-        setDefaultFechaHora();
+        initializeDefault();
     }
 
     public SesionEntity(final UUID id) {
         setId(id);
-        setDefaultGrupo();
-        setDefaultFechaHora();
+        initializeDefault();
     }
 
     public SesionEntity(final UUID id, final GrupoEntity grupo, final LocalDateTime fechaHora) {
         setId(id);
         setGrupo(grupo);
         setFechaHora(fechaHora);
+    }
+
+    public void initializeDefault(){
+        setDefaultGrupo();
+        setDefaultFechaHora();
     }
 
     public UUID getId() {
