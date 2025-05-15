@@ -27,16 +27,12 @@ public final class AsistenciaEntity {
 
     public AsistenciaEntity() {
         setDefaultId();
-        setDefaultEstudianteGrupo();
-        setDefaultSesion();
-        setDefaultAsistio();
+        initializeDefault();
     }
 
     public AsistenciaEntity(final UUID id) {
         setId(id);
-        setDefaultEstudianteGrupo();
-        setDefaultSesion();
-        setDefaultAsistio();
+        initializeDefault();
     }
 
     public AsistenciaEntity(final UUID id, final EstudianteGrupoEntity estudianteGrupo, final SesionEntity sesion, final boolean asistio) {
@@ -45,6 +41,13 @@ public final class AsistenciaEntity {
         setSesion(sesion);
         setAsistio(asistio);
     }
+
+    public void initializeDefault(){
+        setDefaultEstudianteGrupo();
+        setDefaultSesion();
+        setDefaultAsistio();
+    }
+
 
     public UUID getId() {
         return id;
